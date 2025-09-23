@@ -1,4 +1,4 @@
-// Resumen estructural del proyecto CVProfile en formato Java
+// Proyecto CVProfile en formato Java
 
 
 // Archivo: ./app/src/main/java\com\example\cvprofile\MainActivity.kt
