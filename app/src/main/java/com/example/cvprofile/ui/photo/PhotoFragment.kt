@@ -47,22 +47,22 @@ class PhotoFragment : Fragment() {
             Proyecto(
                 "E-commerce Platform",
                 "Plataforma completa de comercio electrónico desarrollada con React y Node.js",
-                R.drawable.ic_launcher_background
+                R.drawable.proyecto1_background
             ),
             Proyecto(
                 "Task Management App",
                 "Aplicación móvil para gestión de tareas con React Native",
-                R.drawable.ic_launcher_background
+                R.drawable.proyecto1_background
             ),
             Proyecto(
                 "Proyecto 3",
                 "Otro proyecto interesante",
-                R.drawable.ic_launcher_background
+                R.drawable.proyecto1_background
             ),
             Proyecto(
                 "Proyecto 4",
                 "Un cuarto proyecto para mostrar",
-                R.drawable.ic_launcher_background
+                R.drawable.proyecto1_background
             )
         )
     }
