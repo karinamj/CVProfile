@@ -1,31 +1,74 @@
 package com.example.cvprofile.ui.photo
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
+import androidx.fragment.app.Fragment
 import com.example.cvprofile.R
+import com.example.cvprofile.databinding.FragmentPhotosBinding
+import com.example.cvprofile.model.Proyecto
 
 class PhotoFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = PhotoFragment()
-    }
-
-    private val viewModel: PhotoViewModel by viewModels()
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        // TODO: Use the ViewModel
-    }
+    private var _binding: FragmentPhotosBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_photos, container, false)
+        _binding = FragmentPhotosBinding.inflate(inflater, container, false)
+
+        val proyectos = obtenerProyectos()
+
+        // Cargar proyectos dinámicamente
+        for (proyecto in proyectos) {
+            val cardView = layoutInflater.inflate(R.layout.item_proyecto, binding.proyectosContainer, false)
+
+            val imagen: ImageView = cardView.findViewById(R.id.proyectoImagen)
+            val titulo: TextView = cardView.findViewById(R.id.proyectoTitulo)
+            val descripcion: TextView = cardView.findViewById(R.id.proyectoDescripcion)
+
+            imagen.setImageResource(proyecto.imagen)
+            titulo.text = proyecto.titulo
+            descripcion.text = proyecto.descripcion
+
+            binding.proyectosContainer.addView(cardView)
+        }
+
+        return binding.root
+    }
+
+    private fun obtenerProyectos(): List<Proyecto> {
+        return listOf(
+            Proyecto(
+                "E-commerce Platform",
+                "Plataforma completa de comercio electrónico desarrollada con React y Node.js",
+                R.drawable.ic_launcher_background
+            ),
+            Proyecto(
+                "Task Management App",
+                "Aplicación móvil para gestión de tareas con React Native",
+                R.drawable.ic_launcher_background
+            ),
+            Proyecto(
+                "Proyecto 3",
+                "Otro proyecto interesante",
+                R.drawable.ic_launcher_background
+            ),
+            Proyecto(
+                "Proyecto 4",
+                "Un cuarto proyecto para mostrar",
+                R.drawable.ic_launcher_background
+            )
+        )
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

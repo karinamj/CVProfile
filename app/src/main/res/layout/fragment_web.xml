@@ -1,13 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.web.WebFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/fondo_principal"
+    android:padding="16dp">
 
-    <TextView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello" />
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="6dp">
 
-</FrameLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12dp"
+            android:orientation="vertical">
+
+            <!-- Título -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Presencia Web"
+                android:textStyle="bold"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"/>
+
+            <!-- Contenedor dinámico de botones -->
+            <LinearLayout
+                android:id="@+id/enlacesContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="16dp"/>
+
+            <!-- Subtítulo -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Enlaces Profesionales"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:layout_marginTop="20dp"
+                android:textColor="@android:color/black"/>
+
+            <!-- Descripción -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Accede a mi portafolio completo, proyectos en GitHub y perfiles profesionales en las principales plataformas del sector tecnológico."
+                android:textSize="14sp"
+                android:layout_marginTop="6dp"
+                android:textColor="@android:color/darker_gray"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</ScrollView>
