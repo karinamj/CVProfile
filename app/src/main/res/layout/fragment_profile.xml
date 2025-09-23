@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="#F5F7FA"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <!-- Foto de perfil -->
+        <ImageView
+            android:id="@+id/profileImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:scaleType="centerCrop"
+            android:background="@drawable/circle_background" />
+
+        <!-- Nombre -->
+        <TextView
+            android:id="@+id/profileName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pedro Pérez"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"
+            android:textColor="@android:color/black" />
+
+        <!-- Puesto -->
+        <TextView
+            android:id="@+id/profileRole"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Desarrollador Frontend"
+            android:textSize="16sp"
+            android:textColor="#666666" />
+
+        <!-- Información personal -->
+        <TextView
+            android:id="@+id/profileInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Desarrollador Frontend con 5 años de experiencia en React, TypeScript y diseño UX/UI. Especializado en crear interfaces web modernas y responsive."
+            android:textSize="14sp"
+            android:textColor="#444444"
+            android:lineSpacingExtra="2dp" />
+
+        <!-- Sección Habilidades -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Habilidades"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+
+        <LinearLayout
+            android:id="@+id/skillsContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="React"
+                android:background="@drawable/skill_chip"
+                android:padding="6dp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TypeScript"
+                android:background="@drawable/skill_chip"
+                android:padding="6dp"
+                android:layout_margin="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Node.js"
+                android:background="@drawable/skill_chip"
+                android:padding="6dp"
+                android:layout_margin="4dp" />
+
+        </LinearLayout>
+
+        <!-- Sección Experiencia -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Experiencia"
+            android:textStyle="bold"
+            android:textSize="16sp"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Frontend Developer - TechCorp\n2022 - Presente"
+            android:textSize="14sp"
+            android:textColor="#444444" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="UI/UX Designer - DesignStudio\n2020 - 2022"
+            android:textSize="14sp"
+            android:textColor="#444444" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Designer - PickStudio\n2018 - 2020"
+            android:textSize="14sp"
+            android:textColor="#444444" />
+
+    </LinearLayout>
+</ScrollView>
