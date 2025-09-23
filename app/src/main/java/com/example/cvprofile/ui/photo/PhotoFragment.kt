@@ -52,17 +52,17 @@ class PhotoFragment : Fragment() {
             Proyecto(
                 "Task Management App",
                 "Aplicación móvil para gestión de tareas con React Native",
-                R.drawable.proyecto1_background
+                R.drawable.proyecto2_background
             ),
             Proyecto(
                 "Proyecto 3",
                 "Otro proyecto interesante",
-                R.drawable.proyecto1_background
+                R.drawable.proyecto3_background
             ),
             Proyecto(
                 "Proyecto 4",
                 "Un cuarto proyecto para mostrar",
-                R.drawable.proyecto1_background
+                R.drawable.proyecto4_background
             )
         )
     }
