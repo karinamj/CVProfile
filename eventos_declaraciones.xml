@@ -1,0 +1,63 @@
+Archivo: .\app\src\androidTest\java\com\example\cvprofile\ExampleInstrumentedTest.kt
+  Línea 19: fun useAppContext()
+
+Archivo: .\app\src\main\java\com\example\cvprofile\MainActivity.kt
+  Línea 21: override fun onCreate()
+  Línea 29: Evento -> binding.appBarMain.fab.setOnClickListener { view ->
+  Línea 48: override fun onCreateOptionsMenu()
+  Línea 54: override fun onSupportNavigateUp()
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\button\ButtonFragment.kt
+  Línea 14: fun newInstance()
+  Línea 19: override fun onCreate()
+  Línea 25: override fun onCreateView()
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\button\ButtonViewModel.kt
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\gallery\GalleryFragment.kt
+  Línea 20: override fun onCreateView()
+  Línea 38: override fun onDestroyView()
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\gallery\GalleryViewModel.kt
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\home\HomeFragment.kt
+  Línea 20: override fun onCreateView()
+  Línea 34: override fun onDestroyView()
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\home\HomeViewModel.kt
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\photo\PhotoFragment.kt
+  Línea 14: fun newInstance()
+  Línea 19: override fun onCreate()
+  Línea 25: override fun onCreateView()
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\photo\PhotoViewModel.kt
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\profile\ProfileFragment.kt
+  Línea 21: override fun onCreateView()
+  Línea 36: override fun onDestroyView()
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\profile\ProfileViewModel.kt
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\slideshow\SlideshowFragment.kt
+  Línea 20: override fun onCreateView()
+  Línea 38: override fun onDestroyView()
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\slideshow\SlideshowViewModel.kt
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\video\VideoFragment.kt
+  Línea 14: fun newInstance()
+  Línea 19: override fun onCreate()
+  Línea 25: override fun onCreateView()
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\video\VideoViewModel.kt
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\web\WebFragment.kt
+  Línea 14: fun newInstance()
+  Línea 19: override fun onCreate()
+  Línea 25: override fun onCreateView()
+
+Archivo: .\app\src\main\java\com\example\cvprofile\ui\web\WebViewModel.kt
+
+Archivo: .\app\src\test\java\com\example\cvprofile\ExampleUnitTest.kt
+  Línea 14: fun addition_isCorrect()
