@@ -2,8 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:baselineAligned="false"
     android:orientation="horizontal"
-    android:background="@color/fondo_principal">
+    android:fitsSystemWindows="true"
+    android:background="@color/navy_blue_light">
 
     <!-- Menú lateral estático -->
     <LinearLayout
@@ -19,87 +21,92 @@
         <!-- Botón Perfil -->
         <TextView
             android:id="@+id/btnPerfil"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/bg_button_square"
+            android:clickable="true"
             android:drawableTop="@drawable/ic_menu_profile"
+            android:focusable="true"
             android:gravity="center"
+            android:padding="5dp"
             android:text="Perfil"
             android:textColor="@color/gray_dark"
-            android:textSize="10sp"
-            android:paddingTop="8dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginTop="12dp"
-            android:layout_marginBottom="8dp"/>
+            android:textSize="12sp"
+            android:layout_marginHorizontal="3dp"/>
 
         <!-- Botón Fotos -->
         <TextView
             android:id="@+id/btnFotos"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/bg_button_square"
+            android:clickable="true"
             android:drawableTop="@drawable/ic_menu_photo"
+            android:focusable="true"
             android:gravity="center"
+            android:padding="5dp"
             android:text="Fotos"
             android:textColor="@color/gray_dark"
-            android:textSize="10sp"
-            android:paddingTop="4dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"/>
+            android:textSize="12sp"
+            android:layout_marginHorizontal="3dp"/>
 
         <!-- Botón Video -->
         <TextView
             android:id="@+id/btnVideo"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/bg_button_square"
+            android:clickable="true"
             android:drawableTop="@drawable/ic_menu_video"
+            android:focusable="true"
             android:gravity="center"
+            android:padding="5dp"
             android:text="Video"
             android:textColor="@color/gray_dark"
-            android:textSize="10sp"
-            android:paddingTop="4dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"/>
+            android:textSize="12sp"
+            android:layout_marginHorizontal="3dp"/>
 
         <!-- Botón Web -->
         <TextView
             android:id="@+id/btnWeb"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/bg_button_square"
+            android:clickable="true"
             android:drawableTop="@drawable/ic_menu_web"
+            android:focusable="true"
             android:gravity="center"
+            android:padding="5dp"
             android:text="Web"
             android:textColor="@color/gray_dark"
-            android:textSize="10sp"
-            android:paddingTop="4dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"/>
+            android:textSize="12sp"
+            android:layout_marginHorizontal="3dp"/>
 
         <!-- Botón Contacto -->
         <TextView
             android:id="@+id/btnBotones"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:background="@drawable/bg_button_square"
+            android:clickable="true"
             android:drawableTop="@drawable/ic_menu_button"
+            android:focusable="true"
             android:gravity="center"
+            android:padding="5dp"
             android:text="Botones"
             android:textColor="@color/gray_dark"
-            android:textSize="10sp"
-            android:paddingTop="4dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"/>
+            android:textSize="12sp"
+            android:layout_marginHorizontal="3dp"/>
 
     </LinearLayout>
 
