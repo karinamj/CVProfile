@@ -8,4 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="fondo_principal">#E3E9F1</color>
+    <color name="gray_light">#E0E0E0</color>   <!-- gris claro -->
+    <color name="gray">#9E9E9E</color>         <!-- gris estándar -->
+    <color name="gray_dark">#616161</color>    <!-- gris oscuro -->
+    <color name="navy_blue_dark">#000080</color>   <!-- Navy clásico -->
+    <color name="navy_blue_medium">#002147</color> <!-- Azul marino Oxford -->
+    <color name="navy_blue_light">#45556c</color> <!-- Azul marino claro -->
+    <color name="fondo_claro">#F5F7FA</color>  <!-- Gris azulado muy claro -->
+    <color name="fondo_claro_alt">#ECEFF4</color> <!-- Gris claro moderno -->
+    <color name="fondo_blanco_suave">#FAFAFA</color> <!-- Blanco suave -->
 </resources>
