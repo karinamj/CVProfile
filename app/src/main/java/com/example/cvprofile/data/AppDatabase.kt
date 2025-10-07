@@ -4,13 +4,28 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.example.cvprofile.data.local.dao.ExperienceDao
+import com.example.cvprofile.data.local.dao.PortfolioDao
+import com.example.cvprofile.data.local.dao.SkillDao
 import com.example.cvprofile.data.local.dao.UserDao
+import com.example.cvprofile.data.local.entity.ExperienceEntity
+import com.example.cvprofile.data.local.entity.PortfolioEntity
+import com.example.cvprofile.data.local.entity.SkillEntity
 import com.example.cvprofile.data.local.entity.UserEntity
 
-@Database(entities = [UserEntity::class], version = 3)
+@Database(entities = [
+    UserEntity::class,
+    PortfolioEntity::class,
+    SkillEntity::class,
+    ExperienceEntity::class],
+    version = 11,
+    exportSchema = false)
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun userDao(): UserDao
+    abstract fun portfolioDao(): PortfolioDao
+    abstract fun skillDao(): SkillDao
+    abstract fun experienceDao(): ExperienceDao
 
     companion object {
         @Volatile private var INSTANCE: AppDatabase? = null

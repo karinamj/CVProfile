@@ -7,7 +7,7 @@ import androidx.room.ForeignKey
 @Entity(
     tableName = "video",
     foreignKeys = [ForeignKey(
-        entity = PortafolioEntity::class,
+        entity = PortfolioEntity::class,
         parentColumns = ["id"],
         childColumns = ["portafolioId"],
         onDelete = ForeignKey.CASCADE

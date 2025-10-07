@@ -3,7 +3,7 @@ package com.example.cvprofile
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cvprofile.databinding.ActivityProfileBinding
-import com.example.cvprofile.util.ProfilePagerAdapter
+import com.example.cvprofile.adapter.ProfilePagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 class ProfileActivity : AppCompatActivity() {
