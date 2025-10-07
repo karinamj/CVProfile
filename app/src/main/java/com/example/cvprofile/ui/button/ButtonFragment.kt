@@ -18,7 +18,7 @@ class ButtonFragment : Fragment() {
 
     private var _binding: FragmentButtonBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: ProfileViewModel by viewModels()
+    private val viewModel: ButtonViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
