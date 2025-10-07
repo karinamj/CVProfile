@@ -4,19 +4,10 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.ForeignKey
 
-@Entity(
-    tableName = "enlace_profesional",
-    foreignKeys = [ForeignKey(
-        entity = PortafolioEntity::class,
-        parentColumns = ["id"],
-        childColumns = ["portafolioId"],
-        onDelete = ForeignKey.CASCADE
-    )]
-)
+@Entity(tableName = "enlace_profesional")
 data class EnlaceProfesionalEntity(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    val portafolioId: Int,
-    val titulo: String,
+    val title: String,
     val url: String,
     val logo: Int
 )

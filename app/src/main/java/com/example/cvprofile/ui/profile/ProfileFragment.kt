@@ -5,23 +5,26 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import coil.load
 import com.example.cvprofile.ProfileActivity
 import com.example.cvprofile.R
+import com.example.cvprofile.data.local.entity.ExperienceEntity
+import com.example.cvprofile.data.local.entity.SkillEntity
+import com.example.cvprofile.data.local.entity.UserEntity
 import com.example.cvprofile.databinding.FragmentProfileBinding
-import com.example.cvprofile.model.Experiencia
-import com.example.cvprofile.model.Portafolio
-import com.example.cvprofile.model.Usuario
 
 class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: ProfileViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,48 +32,66 @@ class ProfileFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
-        val view = binding.root
+        observeData()
 
-        // 1. Datos de ejemplo
-        val usuario = Usuario(
-            nombre = "Pedro Pérez",
-            correo = "pedro.perez@mail.com",
-            foto = R.drawable.ic_person
-        )
-        val portafolio = obtenerDatosPortafolio()
-
-        // 2. Configurar UI
-        configurarUsuario(usuario, portafolio)
-        mostrarHabilidades(portafolio)
-        mostrarExperiencias(portafolio)
-
-        return view
-    }
-
-    private fun configurarUsuario(usuario: Usuario, portafolio: Portafolio) {
-        val profileImage: ImageView = binding.profileImage
-        val profileName: TextView = binding.profileName
-        val profileRole: TextView = binding.profileRole
-        val profileInfo: TextView = binding.profileInfo
-
-        profileImage.setImageResource(usuario.foto)
-        profileName.text = usuario.nombre
-        profileRole.text = portafolio.titulo
-        profileInfo.text = portafolio.descripcion
-
-        profileImage.setOnClickListener {
+        binding.btnEditProfile.setOnClickListener {
             val intent = Intent(requireContext(), ProfileActivity::class.java)
             startActivity(intent)
         }
+
+        viewModel.loadUser()
+        return binding.root
     }
 
-    private fun mostrarHabilidades(portafolio: Portafolio) {
+    private fun observeData() {
+        viewModel.user.observe(viewLifecycleOwner) { user ->
+            user?.let {
+                showUserInfo(it)
+            }
+        }
+
+        viewModel.skills.observe(viewLifecycleOwner) { skills ->
+            showSkills(skills)
+        }
+
+        viewModel.experiences.observe(viewLifecycleOwner) { experiences ->
+            showExperiences(experiences)
+        }
+    }
+
+    private fun showUserInfo(user: UserEntity){
+        binding.apply {
+            profileName.text = user.name ?: ""
+            profileRole.text = user.profession ?: ""
+            profileInfo.text = user.description ?: ""
+
+            if (!user.profileImagePath.isNullOrEmpty()) {
+                profileImage.load(user.profileImagePath!!.toUri()) {
+                    placeholder(R.drawable.ic_person)
+                    error(R.drawable.ic_person)
+                }
+            } else {
+                profileImage.setImageResource(R.drawable.ic_person)
+            }
+        }
+    }
+
+    private fun showSkills(skills: List<SkillEntity>) {
         val skillsContainer: LinearLayout = binding.skillsContainer
         skillsContainer.removeAllViews()
 
-        for (skill in portafolio.habilidades) {
+        if (skills.isEmpty()) {
+            val emptyText = TextView(requireContext()).apply {
+                text = "Aún no se han agregado habilidades."
+                setPadding(16, 8, 16, 8)
+            }
+            skillsContainer.addView(emptyText)
+            return
+        }
+
+        for (skill in skills) {
             val skillView = TextView(requireContext()).apply {
-                text = skill
+                text = skill.name
                 setPadding(16, 8, 16, 8)
                 setBackgroundResource(R.drawable.skill_chip)
                 layoutParams = LinearLayout.LayoutParams(
@@ -82,38 +103,36 @@ class ProfileFragment : Fragment() {
         }
     }
 
-    private fun mostrarExperiencias(portafolio: Portafolio) {
+    private fun showExperiences(experiencias: List<ExperienceEntity>) {
         binding.experienciaContainer.removeAllViews()
+        if (experiencias.isEmpty()) {
+            val emptyText = TextView(requireContext()).apply {
+                text = "Aún no se han agregado experiencias."
+                setPadding(16, 8, 16, 8)
+            }
+            binding.experienciaContainer.addView(emptyText)
+            return
+        }
 
-        for (exp in portafolio.experiencias) {
+        for (exp in experiencias) {
             val expView = TextView(requireContext()).apply {
                 text = HtmlCompat.fromHtml(
-                    "<b>${exp.cargo}</b> - ${exp.empresa}<br>${exp.fechaInicio} - ${exp.fechaFin}",
+                    "<b>${exp.position}</b> - ${exp.companyName}<br>${exp.startDate} - ${exp.endDate ?: "Present"}<br>${exp.description ?: ""}",
                     HtmlCompat.FROM_HTML_MODE_LEGACY
                 )
                 textSize = 14f
                 setTextColor(resources.getColor(android.R.color.black, null))
+                setPadding(8, 8, 8, 8)
             }
             binding.experienciaContainer.addView(expView)
         }
     }
 
-    private fun obtenerDatosPortafolio(): Portafolio {
-        return Portafolio(
-            titulo = "Desarrollador Frontend",
-            descripcion = "Desarrollador Frontend con 5 años de experiencia en React," +
-                    " TypeScript y diseño UX/UI. Especializado en crear interfaces web modernas y responsive.",
-            habilidades = listOf("React", "TypeScript", "Node.js", "TailwindCSS"),
-            experiencias = listOf(
-                Experiencia("TechCorp", "Frontend Developer", "2022", "Presente"),
-                Experiencia("DesignStudio", "UI/UX Designer", "2020", "2022"),
-                Experiencia("PickStudio", "Designer", "2018", "2020")
-            ),
-            proyectos = emptyList(),
-            videos = emptyList(),
-            enlaces = emptyList()
-        )
+    override fun onResume() {
+        super.onResume()
+        viewModel.loadUser()
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

@@ -1,36 +1,75 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="8dp"
+    android:padding="16dp"
     android:background="@color/fondo_principal">
 
-    <!-- Card principal -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/card_background"
-        android:padding="20dp"
-        android:gravity="center">
+        android:padding="20dp">
 
         <!-- Título -->
         <TextView
-            android:id="@+id/tvOpcionesContacto"
+            android:id="@+id/tvContactOptions"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Opciones de Contacto"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginBottom="16dp"/>
+            android:layout_marginBottom="16dp" />
 
-        <!-- Botones dinámicos -->
-        <LinearLayout
-            android:id="@+id/containerBotones"
+        <!-- Botones Material -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnDownloadCv"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_marginBottom="20dp"/>
+            android:text="Descargar Hoja de Vida"
+            app:icon="@drawable/ic_download"
+            app:iconTint="@android:color/black"
+            app:iconPadding="12dp"
+            android:layout_marginBottom="12dp"
+            android:textAllCaps="false"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSendEmail"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Enviar Correo"
+            app:icon="@drawable/ic_email"
+            app:iconTint="@android:color/black"
+            app:iconPadding="12dp"
+            android:layout_marginBottom="12dp"
+            android:textAllCaps="false"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCall"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Llamar Ahora"
+            app:icon="@drawable/ic_phone"
+            app:iconTint="@android:color/black"
+            app:iconPadding="12dp"
+            android:layout_marginBottom="12dp"
+            android:textAllCaps="false"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLinkedin"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Conectar en LinkedIn"
+            app:icon="@drawable/ic_link"
+            app:iconTint="@android:color/black"
+            app:iconPadding="12dp"
+            android:layout_marginBottom="24dp"
+            android:textAllCaps="false"/>
 
         <!-- Información de contacto -->
         <TextView
@@ -38,12 +77,54 @@
             android:layout_height="wrap_content"
             android:text="Información de Contacto"
             android:textStyle="bold"
-            android:layout_marginBottom="8dp"/>
+            android:layout_marginBottom="8dp" />
 
         <LinearLayout
             android:id="@+id/containerInfo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"/>
+            android:orientation="vertical"
+            android:dividerPadding="8dp">
+
+            <TextView
+                android:id="@+id/tvEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_email"
+                android:drawableTint="@android:color/black"
+                android:drawablePadding="8dp"
+                android:text="Correo no disponible"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_phone"
+                android:drawableTint="@android:color/black"
+                android:drawablePadding="8dp"
+                android:text="Teléfono no disponible"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_location"
+                android:drawableTint="@android:color/black"
+                android:drawablePadding="8dp"
+                android:text="Dirección no disponible"
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/tvAvailability"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_check"
+                android:drawableTint="@android:color/black"
+                android:drawablePadding="8dp"
+                android:text="Disponibilidad no especificada"
+                android:textColor="@color/black" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</ScrollView>

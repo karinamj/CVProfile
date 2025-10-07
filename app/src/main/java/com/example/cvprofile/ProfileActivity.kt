@@ -3,7 +3,7 @@ package com.example.cvprofile
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cvprofile.databinding.ActivityProfileBinding
-import com.example.cvprofile.util.ProfilePagerAdapter
+import com.example.cvprofile.adapter.ProfilePagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 
 class ProfileActivity : AppCompatActivity() {
@@ -22,10 +22,9 @@ class ProfileActivity : AppCompatActivity() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = when (position) {
                 0 -> "Usuario"
-                1 -> "Educación"
-                2 -> "Experiencia"
-                3 -> "Habilidades"
-                4 -> "Proyectos"
+                1 -> "Experiencia"
+                2 -> "Habilidades"
+                3 -> "Presentación"
                 else -> ""
             }
         }.attach()

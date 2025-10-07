@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/fondo_principal"
     android:padding="8dp">
 
@@ -16,8 +16,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="12dp"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:padding="12dp">
 
             <!-- Título -->
             <TextView
@@ -26,15 +26,46 @@
                 android:text="Presencia Web"
                 android:textStyle="bold"
                 android:textSize="18sp"
-                android:textColor="@android:color/black"/>
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="16dp" />
 
-            <!-- Contenedor dinámico de botones -->
-            <LinearLayout
-                android:id="@+id/enlacesContainer"
+            <!-- Botones -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnWebsite"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:layout_marginTop="16dp"/>
+                android:text="Ver Sitio web personal"
+                android:drawableStart="@android:drawable/ic_menu_view"
+                app:iconGravity="textTop"
+                app:iconPadding="12dp"
+                android:layout_marginBottom="12dp"
+                android:textAllCaps="false"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnLinkedin"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ver portafolio en linkedIn"
+                android:drawableStart="@android:drawable/ic_menu_view"
+                app:iconGravity="textTop"
+                app:iconPadding="12dp"
+                android:layout_marginBottom="12dp"
+                android:tint="@android:color/black"
+                android:textAllCaps="false"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnGithub"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ver proyectos en gitHub"
+                android:drawableStart="@android:drawable/ic_menu_view"
+                app:iconGravity="textTop"
+                app:iconPadding="12dp"
+                android:layout_marginBottom="24dp"
+                android:textAllCaps="false"/>
 
             <!-- Subtítulo -->
             <TextView
@@ -44,16 +75,17 @@
                 android:textStyle="bold"
                 android:textSize="16sp"
                 android:layout_marginTop="20dp"
-                android:textColor="@android:color/black"/>
+                android:textColor="@android:color/black" />
 
             <!-- Descripción -->
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Accede a mi portafolio completo, proyectos en GitHub y perfiles profesionales en las principales plataformas del sector tecnológico."
+                android:text="Accede a mi portafolio, GitHub y perfil profesional."
                 android:textSize="14sp"
                 android:layout_marginTop="6dp"
-                android:textColor="@android:color/darker_gray"/>
+                android:textColor="@android:color/darker_gray" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </ScrollView>
