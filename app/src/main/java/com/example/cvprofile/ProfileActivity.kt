@@ -22,10 +22,9 @@ class ProfileActivity : AppCompatActivity() {
         TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
             tab.text = when (position) {
                 0 -> "Usuario"
-                1 -> "Educación"
-                2 -> "Experiencia"
-                3 -> "Habilidades"
-                4 -> "Proyectos"
+                1 -> "Experiencia"
+                2 -> "Habilidades"
+                3 -> "Presentación"
                 else -> ""
             }
         }.attach()

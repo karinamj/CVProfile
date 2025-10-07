@@ -1,4 +1,4 @@
-package com.example.cvprofile.ui.video
+package com.example.cvprofile.ui.edit.video
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
@@ -9,7 +9,8 @@ import com.example.cvprofile.data.AppDatabase
 import com.example.cvprofile.data.local.entity.VideoEntity
 import kotlinx.coroutines.launch
 
-class VideoViewModel(application: Application) : AndroidViewModel(application){
+class VideoViewModel(application: Application) : AndroidViewModel(application) {
+
     private val db = AppDatabase.getDatabase(application)
     private val videoDao = db.videoDao()
 
@@ -20,6 +21,12 @@ class VideoViewModel(application: Application) : AndroidViewModel(application){
         viewModelScope.launch {
             val videoData = videoDao.getVideo()
             _video.postValue(videoData)
+        }
+    }
+
+    fun insertVideo(video: VideoEntity) {
+        viewModelScope.launch {
+            videoDao.insert(video)
         }
     }
 }

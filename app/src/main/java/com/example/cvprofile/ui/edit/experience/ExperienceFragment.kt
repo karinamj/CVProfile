@@ -40,11 +40,11 @@ class ExperienceFragment : Fragment() {
 
             if (company.isNotBlank() && position.isNotBlank() && start.isNotBlank()) {
                 viewModel.addExperience(company, position, start, end, desc)
-                binding.etCompanyName.text.clear()
-                binding.etPosition.text.clear()
-                binding.etStartDate.text.clear()
-                binding.etEndDate.text.clear()
-                binding.etDescription.text.clear()
+                binding.etCompanyName.text?.clear()
+                binding.etPosition.text?.clear()
+                binding.etStartDate.text?.clear()
+                binding.etEndDate.text?.clear()
+                binding.etDescription.text?.clear()
             }
         }
 
