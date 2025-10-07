@@ -1,5 +1,6 @@
 package com.example.cvprofile.ui.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +8,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.net.toUri
 import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
+import com.example.cvprofile.ProfileActivity
 import com.example.cvprofile.R
 import com.example.cvprofile.databinding.FragmentProfileBinding
 import com.example.cvprofile.model.Experiencia
@@ -54,6 +57,11 @@ class ProfileFragment : Fragment() {
         profileName.text = usuario.nombre
         profileRole.text = portafolio.titulo
         profileInfo.text = portafolio.descripcion
+
+        profileImage.setOnClickListener {
+            val intent = Intent(requireContext(), ProfileActivity::class.java)
+            startActivity(intent)
+        }
     }
 
     private fun mostrarHabilidades(portafolio: Portafolio) {
